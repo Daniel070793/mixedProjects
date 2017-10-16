@@ -36,7 +36,7 @@ namespace DanielNotepad
         {
             if(txtEditor.Text == "")
             {
-                txtEditor.Text = "";
+                txtEditor.Clear();
             }
             else
             {
@@ -53,8 +53,7 @@ namespace DanielNotepad
                         MessageBox.Show("fiks så den går tilbage til editor");
                         break;                      
                 }
-            }
-            
+            }            
         } 
 
         private void save()
@@ -80,6 +79,38 @@ namespace DanielNotepad
         private void Save_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             save();
+        }
+
+        private void open()
+        {
+            OpenFileDialog open = new OpenFileDialog();
+
+            open.Title = "Open file";
+            open.Filter = "Text Files (*txt)|*txt";
+            
+            if(open.ShowDialog() == true)
+            {
+                StreamReader read = new StreamReader(File.OpenRead(open.FileName));
+
+                txtEditor.Text = read.ReadToEnd();
+                read.Dispose();
+            }
+        }
+
+        private void Open_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void Open_Execute(object sender, ExecutedRoutedEventArgs e)
+        {
+            open();
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            aboutWindow about = new aboutWindow();
+            about.ShowDialog();
         }
     }
 }

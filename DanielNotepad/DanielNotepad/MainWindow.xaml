@@ -9,13 +9,14 @@
     <Window.CommandBindings>
         <CommandBinding Command="New" CanExecute="New_CanExecute" Executed="New_Executed"></CommandBinding>
         <CommandBinding Command="Save" CanExecute="Save_CanExecute" Executed="Save_Executed" ></CommandBinding>
-        
+        <CommandBinding Command="Open" CanExecute="Open_CanExecute" Executed="Open_Execute"></CommandBinding>
+
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File" Width="56">
+            <MenuItem Header="_File">
                 <MenuItem Command="New"/>
-                <MenuItem Command="Open"/>
+                <MenuItem Header="Open..." Command="Open"/>
                 <MenuItem Command="Save"/>
                 <Separator />
                 <MenuItem Header="_Exit" />
@@ -25,6 +26,9 @@
                 <MenuItem Command="Cut"></MenuItem>
                 <MenuItem Command="Copy"></MenuItem>
                 <MenuItem Command="Paste"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Click="About_Click"></MenuItem>
             </MenuItem>
         </Menu>
         
