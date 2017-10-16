@@ -6,7 +6,28 @@
         xmlns:local="clr-namespace:DanielNotepad"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="New_CanExecute" Executed="New_Executed"></CommandBinding>
+        <CommandBinding Command="Save" CanExecute="Save_CanExecute" Executed="Save_Executed" ></CommandBinding>
         
-    </Grid>
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File" Width="56">
+                <MenuItem Command="New"/>
+                <MenuItem Command="Open"/>
+                <MenuItem Command="Save"/>
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Command="Undo"></MenuItem>
+                <MenuItem Command="Cut"></MenuItem>
+                <MenuItem Command="Copy"></MenuItem>
+                <MenuItem Command="Paste"></MenuItem>
+            </MenuItem>
+        </Menu>
+        
+        <TextBox AcceptsReturn="True" x:Name="txtEditor" />
+    </DockPanel>
 </Window>
