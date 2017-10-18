@@ -14,7 +14,7 @@ namespace AppWithGPS
         {
             InitializeComponent();
         }
-
+        //Github for documentation for geolocator plugin: https://github.com/jamesmontemagno/GeolocatorPlugin
         private async void Button_Clicked(object sender, EventArgs e)
         {
             var locator = CrossGeolocator.Current;
