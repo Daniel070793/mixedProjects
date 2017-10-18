@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppWithGPS"
+             x:Class="AppWithGPS.MainPage">
+
+    <StackLayout Orientation="Vertical">
+        <Button Text="Get GPS Position" Clicked="Button_Clicked"></Button>
+        <Label Text="Latitude:"></Label>
+        <Label x:Name="lblLatitude" FontSize="Large"></Label>
+        <Label Text="Longitude:"></Label>
+        <Label x:Name="lblLongitude" FontSize="Large"></Label>
+    </StackLayout>
+    
+</ContentPage>

@@ -10,7 +10,7 @@
         <CommandBinding Command="New" CanExecute="New_CanExecute" Executed="New_Executed"></CommandBinding>
         <CommandBinding Command="Save" CanExecute="Save_CanExecute" Executed="Save_Executed" ></CommandBinding>
         <CommandBinding Command="Open" CanExecute="Open_CanExecute" Executed="Open_Execute"></CommandBinding>
-
+        <CommandBinding Command="Print" CanExecute="Print_CanExecute" Executed="Print_Execute"></CommandBinding>
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -18,6 +18,8 @@
                 <MenuItem Command="New"/>
                 <MenuItem Header="Open..." Command="Open"/>
                 <MenuItem Command="Save"/>
+                <Separator />
+                <MenuItem Header="_Print..." Command="Print"></MenuItem>
                 <Separator />
                 <MenuItem Header="_Exit" />
             </MenuItem>
@@ -32,6 +34,6 @@
             </MenuItem>
         </Menu>
         
-        <TextBox AcceptsReturn="True" x:Name="txtEditor" />
+        <TextBox AcceptsReturn="True" x:Name="txtEditor" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"/>
     </DockPanel>
 </Window>

@@ -112,5 +112,20 @@ namespace DanielNotepad
             aboutWindow about = new aboutWindow();
             about.ShowDialog();
         }
+
+        private void print()
+        {
+            //
+        }
+
+        private void Print_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void Print_Execute(object sender, ExecutedRoutedEventArgs e)
+        {
+            //
+        }
     }
 }
